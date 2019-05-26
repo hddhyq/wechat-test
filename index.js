@@ -44,6 +44,7 @@ app.get("/oauth/callback", function(req, res, next) {
       var userInfo = result;
       // save or other opration
       res.json(userInfo);
+      console.log(userInfo);
     });
   });
 });
