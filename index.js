@@ -26,14 +26,14 @@ app.use(
  * 响应微信测试服务器的连接验证
  **/
 app.get("/", function(req, res, next) {
-  var auth_callback_url = config.domain + "/oauth/callback";
+  var auth_callback_url = config.domain + "/callback";
   var url = client.getAuthorizeURL(auth_callback_url, "", "snsapi_userinfo");
   console.log(url);
   // 重定向请求到微信服务器
   res.redirect(url);
 });
 
-app.get("/oauth/callback", function(req, res, next) {
+app.get("/callback", function(req, res, next) {
   var code = req.query.code;
   client.getAccessToken(code, function(err, result) {
     console.log(result);
