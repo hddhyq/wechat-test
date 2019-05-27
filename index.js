@@ -13,19 +13,19 @@ app.use(express.query());
 // app.use(express.static("views"));
 
 // 回复消息
-// app.use(
-//   "/",
-//   wechat(config, function(req, res, next) {
-//     var message = req.weixin;
-//     console.log(message);
-//     res.reply("hello");
-//   })
-// );
+app.use(
+  "/",
+  wechat(config, function(req, res, next) {
+    var message = req.weixin;
+    console.log(message);
+    res.reply("hello");
+  })
+);
 
 /*
  * 响应微信测试服务器的连接验证
  **/
-app.get("/", function(req, res, next) {
+app.get("/oauth2", function(req, res, next) {
   var auth_callback_url = config.domain + "/callback";
   var url = client.getAuthorizeURL(auth_callback_url, "", "snsapi_userinfo");
   console.log(url);
