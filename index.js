@@ -10,7 +10,7 @@ var OAuth = require("wechat-oauth");
 var client = new OAuth(config.appid, config.appsecret);
 
 app.use(express.query());
-// app.use(express.static("views"));
+app.use(express.static("views"));
 
 // 回复消息
 app.use(
@@ -25,6 +25,10 @@ app.use(
 /*
  * 响应微信测试服务器的连接验证
  **/
+app.get("/oauth.html", function() {
+  res.end();
+});
+
 app.get("/oauth2", function(req, res, next) {
   var auth_callback_url = config.domain + "/callback";
   var url = client.getAuthorizeURL(auth_callback_url, "", "snsapi_userinfo");

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>outh test</div>
+    <button>
+      oauth2
+    </button>
+  </body>
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+  <script>
+    document.querySelector("button").addEventListener(
+      "click",
+      function() {
+        console.log(111);
+        axios
+          .get("http://www.brokenbones.xyz/oauth2")
+          .then(res => {
+            console.log(res);
+          })
+          .catch(err => console.log(err));
+      },
+      false
+    );
+  </script>
+</html>
