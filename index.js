@@ -13,14 +13,14 @@ app.use(express.query());
 // app.use(express.static("views"));
 
 // 回复消息
-app.use(
-  "/",
-  wechat(config, function(req, res, next) {
-    var message = req.weixin;
-    console.log(message);
-    res.reply("hello");
-  })
-);
+// app.use(
+//   "/",
+//   wechat(config, function(req, res, next) {
+//     var message = req.weixin;
+//     console.log(message);
+//     res.reply("hello");
+//   })
+// );
 
 /*
  * 响应微信测试服务器的连接验证
