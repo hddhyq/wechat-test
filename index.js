@@ -25,9 +25,6 @@ app.use(
 /*
  * 响应微信测试服务器的连接验证
  **/
-app.get("/oauth.html", function() {
-  res.end();
-});
 
 app.get("/oauth2", function(req, res, next) {
   var auth_callback_url = config.domain + "/callback";
